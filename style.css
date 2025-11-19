@@ -1,0 +1,256 @@
+/* ---------- VARIABLES GENERALES ---------- */
+
+:root {
+    --color-primary: #d6a84b;      /* amarillo gastado estilo logo */
+    --color-primary-dark: #a07832; /* amarillo más oscuro */
+    --color-background: #0b0b0b;   /* fondo global muy oscuro */
+    --color-surface: #151515;      /* superficie de secciones */
+    --color-card: #1f1f1f;         /* tarjetas */
+    --color-text: #f5f4e8;         /* texto principal */
+    --color-text-soft: #c1bba5;    /* texto secundario */
+    --accent-red: #b10f0f;         /* rojo sangre */
+    --radius-large: 18px;
+    --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.6);
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ---------- RESETEO BÁSICO ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background: var(--color-background);
+}
+
+/* ---------- BARRA SUPERIOR ---------- */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 10%;
+    background: #111111;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.logo-main {
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+.logo-sub {
+    margin-left: 3px;
+    color: var(--accent-red);
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 0.95rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text-soft);
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+.btn-outline {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: transparent;
+    transition: 0.2s;
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: #000;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    padding: 80px 10%;
+    background: radial-gradient(circle at top, #333022 0, #141414 45%, #050505 100%);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-left {
+    max-width: 620px;
+    text-align: left;
+}
+
+.hero-logo {
+    width: 190px;
+    height: auto;
+    margin-bottom: 24px;
+    image-rendering: crisp-edges;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 14px;
+    color: var(--color-primary);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 42ch;
+    margin-bottom: 30px;
+    color: var(--color-text-soft);
+}
+
+/* botón principal */
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 8px;
+    background: var(--color-primary-dark);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.9);
+}
+
+/* ---------- SECCIÓN ARTÍCULOS ---------- */
+
+.articles {
+    padding: 50px 10% 70px;
+    background: var(--color-surface);
+}
+
+.articles h2 {
+    font-size: 1.9rem;
+    margin-bottom: 24px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: var(--color-card);
+    border-radius: var(--radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.card-image {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Puedes cambiar estos gradientes por imágenes reales después */
+.card-image-1 {
+    background-image: linear-gradient(135deg, #7c2d12, #b10f0f);
+}
+
+.card-image-2 {
+    background-image: linear-gradient(135deg, #92400e, #d6a84b);
+}
+
+.card-image-3 {
+    background-image: linear-gradient(135deg, #1f2937, #4b5563);
+}
+
+.card-body {
+    padding: 14px 16px 18px;
+}
+
+.card-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-soft);
+    margin-bottom: 6px;
+}
+
+.card h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    padding: 18px 10%;
+    font-size: 0.85rem;
+    color: var(--color-text-soft);
+    background: #050505;
+    border-top: 1px solid #111;
+    text-align: center;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+    .topbar {
+        padding: 10px 6%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links {
+        display: none; /* luego se puede cambiar por menú hamburguesa */
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero-left {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .articles {
+        padding: 40px 6% 60px;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+}
